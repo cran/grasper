@@ -1,5 +1,4 @@
 "grasp.import" <-
 function () 
 {
-	
 }

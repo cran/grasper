@@ -1,51 +1,45 @@
 "grasp.select.predictors" <-
 function () 
 {
-
-predsel.close <- function(...)
-{
-    tkdestroy(predsel)
-}
-
-apply.predictors <- function()
-{
-    pred.sel <- tkcurselection(frame2.lstbox1)
-    pred.sel <- tclvalue(pred.sel)
-    write(pred.sel, file = "resp")
-    pred.sel <- scan(file = "resp")
-    gr.selX <- pred.sel + 1
-    assign("gr.selX", gr.selX, pos = 1)
-    assign("gr.Xi", gr.selX, pos = 1)
-    assign("SelX", gr.selX, pos = 1)
-    for (i in gr.selX) {
-        Yname <- names(XXX[i])
-        print(Yname)
+    predsel.close <- function(...) {
+        tkdestroy(predsel)
     }
-}
-    
+    apply.predictors <- function() {
+        pred.sel <- tkcurselection(frame2.lstbox1)
+        pred.sel <- tclvalue(pred.sel)
+        write(pred.sel, file = "resp")
+        pred.sel <- scan(file = "resp")
+        gr.selX <- pred.sel + 1
+        assign("gr.selX", gr.selX, pos = 1)
+        assign("gr.Xi", gr.selX, pos = 1)
+        assign("SelX", gr.selX, pos = 1)
+        for (i in gr.selX) {
+            Yname <- names(XXX[i])
+            print(Yname)
+        }
+    }
     predsel <- tktoplevel()
     tktitle(predsel) <- "R-GRASP Select"
-    
     frame1 <- tkframe(predsel, relief = "groove", borderwidth = 2)
     frame2 <- tkframe(predsel, relief = "groove", borderwidth = 2)
     frame3 <- tkframe(predsel, relief = "groove", borderwidth = 2)
-
-    frame1.label <- tklabel(frame1, text = "Select predictors", justify = "left", wraplength = 200)
+    frame1.label <- tklabel(frame1, text = "Select predictors", 
+        justify = "left", wraplength = 200)
     tkpack(frame1, frame1.label, fill = "x")
-
-    frame2.yscroll<-tkscrollbar(frame2) 
-    frame2.lstbox1 <- tklistbox(frame2, selectmode = "multiple", exportselection = FALSE)
-    tkconfigure(frame2.lstbox1, yscrollcommand = paste(.Tk.ID(frame2.yscroll),"set"))
-    tkconfigure(frame2.yscroll, command = paste(.Tk.ID(frame2.lstbox1),"yview"))
+    frame2.yscroll <- tkscrollbar(frame2)
+    frame2.lstbox1 <- tklistbox(frame2, selectmode = "multiple", 
+        exportselection = FALSE)
+    tkconfigure(frame2.lstbox1, yscrollcommand = paste(.Tk.ID(frame2.yscroll), 
+        "set"))
+    tkconfigure(frame2.yscroll, command = paste(.Tk.ID(frame2.lstbox1), 
+        "yview"))
     for (i in c(1:length(XXX))) {
-        tkinsert(frame2.lstbox1, 'end', names(XXX)[i])
+        tkinsert(frame2.lstbox1, "end", names(XXX)[i])
     }
     gr.selX0 <- gr.selX - 1
-    for (i in gr.selX0) 
-    	tkselection.set(frame2.lstbox1, i)
+    for (i in gr.selX0) tkselection.set(frame2.lstbox1, i)
     tkgrid(frame2.lstbox1, frame2.yscroll)
     tkpack(frame2, fill = "y")
-    
     apply.but <- tkbutton(frame3, text = "Apply", command = apply.predictors)
     close.but <- tkbutton(frame3, text = "Close", command = predsel.close)
     tkgrid(apply.but, close.but, sticky = "w")

@@ -1,5 +1,5 @@
 "grasp.pred" <-
-function(gr.Yi = gr.selY)
+function (gr.Yi = gr.selY) 
 {
     cat("\n")
     cat("*****************************************************", "\n")
@@ -17,7 +17,7 @@ function(gr.Yi = gr.selY)
     cat("predicting... ")
     prediction <- rep(1, length(XXXpred[, 1]))
     prediction[gr.predmask[, gr.Yi] == FALSE] <- -99.9
-    prediction[prediction == 1] <- predict.gam(gam.start, XXXpred[prediction == 1,  ], type = "response")
+    prediction[prediction == 1] <- predict.gam(gam.start, XXXpred[prediction == 1, ], type = "response")
     cat("done", "\n")
     cat("Saving predictions...")
     print(prediction[1:10])
@@ -25,5 +25,6 @@ function(gr.Yi = gr.selY)
     assign("gr.predmat", gr.predmat, pos = 1)
     cat("done", "\n")
     cat("\n")
-    cat("**********         GRASP PREDICT END       **********", "\n")
+    cat("**********         GRASP PREDICT END       **********", 
+        "\n")
 }

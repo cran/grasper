@@ -1,14 +1,17 @@
-grasp.in	GraspeR data initializing
-grasp.GUI	GraspeR graphical user interface
-grasp.import	GraspeR data import
-grasp.histo	GraspeR histograms drawing
-grasp.RvsP	GraspeR Response vs. Predictors ploting
-grasp.cormat	GraspeR Correlation plot
-grasp.corlim	GraspeR Covariate space plot
-grasp.datamap	GraspeR datamap ploting
-grasp.model	GraspeR modelling using GAMs
-grasp.pred	GraspeR predicting
-grasp.pred.plot	GraspeR predictions map ploting
-grasp.ascii	GraspeR ascii export for ArcView
-grasp.export	GraspeR exporting
-grasp.limits	GraspeR limits
+grasp.ascii             Export data as an ascii grid file
+grasp.corlim            GRASP-R spatial correlation plot
+grasp.cormat            GRASP-R correlations map and matrix
+grasp.datamap           GRASP-R spatial distribution plot
+grasp.export            Export data as a point file
+grasp.GUI               GRASP-R Graphical User Interface
+grasp.histo             GRASP-R Histograms of VOI on IED
+grasp.in                Initialize GRASP-R variables
+grasp.limits            GRASP-R limits
+grasp.lut               GRASP-R lookup tables
+grasp.model             GRASP-R model creator
+grasp.pred              GRASP-R Predict
+grasp.RvsP              GRASP-R plot of RV vs. PV
+grasp.scope             Scope list Creator
+grasp.start             Formula Creator
+grasp.step.gam          GRASP-R stepwise selection
+grasp.summary           Summary of the Xs and Ys data

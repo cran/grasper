@@ -14,8 +14,7 @@
     \code{\link{grasp.step.gam}} for stepwise selection.
 }
 \author{
-    Fabien Fivaz \code{\email{fabien.fivaz@bluewin.ch}}. Ported to R from GRASP \code{\url{http://www.cscf.ch/grasp/}} for S-Plus written by A. Lehmann, 
-    J.R. Leathwich and J. McC Overton. Look at \url{http://www.fivaz.ch/grasper/index.html} for details and update.
+    Fabien Fivaz \code{\email{fabien.fivaz@bluewin.ch}}. Ported to R from GRASP for S-Plus written by A. Lehmann, J.R. Leathwich and J. McC Overton. Look at \url{http://www.cscf.ch/grasp} for details and update.
 }
 \seealso{
     \code{\link{grasp.model}}, \code{\link{grasp.start}} and \code{\link{grasp.step.gam}}.

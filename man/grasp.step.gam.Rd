@@ -3,7 +3,7 @@
 \alias{grasp.anova.glmlist}
 \alias{grasp.anova.gam}
 \alias{grasp.stat.anova}
-\title{GraspeR stepwise selection}
+\title{GRASP-R stepwise selection}
 \description{Performs a stepwise selection using anova}
 \usage{grasp.step.gam(object, scope, scale, direction, trace, keep, steps, limit, test)}
 \arguments{
@@ -18,7 +18,7 @@
     \item{test}{Test to be used for selection, either "Chisq" or "F".}
 }
 \details{
-    This function is central to GraspeR. It statistically selects significant predictors for each response variable. grasp.step.gam starts by default with the complete model you first created. You have to create a model first with grasp.model, where gr.selX will hold the selected predictors (see \code{\link{grasp.GUI}} for details on graphical selection of variables). The procedure goes in loop to try to eliminate one variable at a time. At each step, the lest significant variable is dropped from the model, and the loop starts again with the new model holding the remaining variables. When direction is "both", the procedure also reintroduce variables in the model. The tests (F or Chisq) are used to decide whether a variable should be kept, dropped or reintroduced. At the end of the procedure, the new model is stored in the variable gam.start. It overwrites the precedent model.
+    This function is central to GRASP-R. It statistically selects significant predictors for each response variable. grasp.step.gam starts by default with the complete model you first created. You have to create a model first with grasp.model, where gr.selX will hold the selected predictors (see \code{\link{grasp.GUI}} for details on graphical selection of variables). The procedure goes in loop to try to eliminate one variable at a time. At each step, the lest significant variable is dropped from the model, and the loop starts again with the new model holding the remaining variables. When direction is "both", the procedure also reintroduce variables in the model. The tests (F or Chisq) are used to decide whether a variable should be kept, dropped or reintroduced. At the end of the procedure, the new model is stored in the variable gam.start. It overwrites the precedent model.
 }
 \Note{
     The grasp.anova.glmlist(), grasp.anova.gam() and grasp.stat.anova() function are dependent on the grasp.step.gam() function but aren't of any use by themselves!

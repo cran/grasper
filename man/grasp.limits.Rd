@@ -1,8 +1,8 @@
 \name{grasp.limits}
 \alias{grasp.limits}
 \alias{grasp.limits.GUI}
-\title{GraspeR limits}
-\description{GraspeR - Restricting the data within limits}
+\title{GRASP-R limits}
+\description{GRASP-R - Restricting the data within limits}
 \usage{grasp.limits(gr.Yi, sX, npast, lim)}
 \arguments{
     \item{gr.Yi}{Selected responses to be used in the form of a vector with column numbers}

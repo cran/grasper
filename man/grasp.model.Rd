@@ -1,6 +1,8 @@
 \name{grasp.model}
 \alias{grasp.model}
-\title{GraspeR model creator}
+\alias{grasp.validate}
+\alias{grasp.roc}
+\title{GRASP-R model creator}
 \description{Creates a model from the given variables}
 \usage{grasp.model(gr.Yi, sX, family, trace, df, calcdf}
 \arguments{

@@ -1,5 +1,5 @@
 "grasp.summary" <-
-function(gr.Yi)
+function (gr.Yi=gr.selY) 
 {
     cat("********* GraspeR.summary **********", "\n")
     cat(date(), "\n")
@@ -12,14 +12,16 @@ function(gr.Yi)
     cat("Response name: ", Yname, "\n", "\n")
     selection <- gr.modmask[, gr.Yi]
     if (length(gr.Yi) > 1) {
-	cat("More than one VOI to summarize, doing lapply()", "\n")
+        cat("More than one VOI to summarize, doing lapply()", 
+            "\n")
         lapply(gr.Yi, grasp.summary)
-    } else {
-    	print(summary(YYY[selection, gr.Yi]))
-	cat("\n")
-	cat("XXX:", "\n")
-	print(summary(XXX[selection, gr.selX]))
     }
-    cat("\n")       
+    else {
+        print(summary(YYY[selection, gr.Yi]))
+        cat("\n")
+        cat("XXX:", "\n")
+        print(summary(XXX[selection, gr.selX]))
+    }
+    cat("\n")
     cat("************************************", "\n")
 }

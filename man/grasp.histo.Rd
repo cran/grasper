@@ -1,6 +1,6 @@
 \name{grasp.histo}
 \alias{grasp.histo}
-\title{GraspeR Histograms of VOI on IED}
+\title{GRASP-R Histograms of VOI on IED}
 \description{Plots the histograms of the of the VOI on the IED}
 \usage{grasp.histo(gr.Yi, sX, nbar)}
 \arguments{

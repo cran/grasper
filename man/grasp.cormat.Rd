@@ -1,6 +1,6 @@
 \name{grasp.cormat}
 \alias{grasp.cormat}
-\title{GraspeR correlations map and matrix}
+\title{GRASP-R correlations map and matrix}
 \description{Calculates correlation between PVs and plots a matrix of correlation}
 \usage{grasp.cormat(gr.Yi, cols, thin = 1)}
 \arguments{
@@ -14,9 +14,9 @@
 }
 \author{
     Fabien Fivaz \email{fabien.fivaz@bluewin.ch}. Ported to R from GRASP \url{http://www.cscf.ch/grasp/} for S-Plus written by A. Lehmann, 
-    J.R. Leathwich and J. McC Overton. Look at \url{http://www.fivaz.ch/grasper/index.html} for details and update.
+    J.R. Leathwich and J. McC Overton. Look at \url{http://www.cscf.ch/grasp} for details and update.
 }
 \seealso{
-    \code{\link{grasp.histo}}, \code{\link{grasp.datamap}}, \code{\link{grasp.RvsP}}
+    \code{\link{grasp.histo}}, \code{\link{grasp.datamap}}, \code{\link{grasp.RvsP}} and \code{\link{grasp.corlim}}
 }
-\keyword{models} \keyword{smooth} \keyword{regression}
+\keyword{models} \keyword{smooth} \keyword{regression} \keyword{plot}

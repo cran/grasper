@@ -7,18 +7,6 @@ function (grass.on = FALSE)
     require(modreg) || stop("Modreg library is not available, install it from CRAN...")
     if (grass.on) 
         require(GRASS)
-    d.show.sites <- function(...) {
-	G<-gmeta()
-        x <- XXX[YYY[, 2] == 1, 2]
-        y <- XXX[YYY[, 2] == 1, 3]
-        z <- rep(1, length(XXX[YYY[, 2] == 1, 1]))
-        system("g.remove sites=test")
-        sites.put(G, "test", x, y, z)
-        system("d.sites type=+ sitefile=test color=red")
-    }
-    grasp.lut.create <- function(...) {
-        grasp.lut(gr.Yi)
-    }    
     d.erase <- function(...) {
         system("d.erase")
     }
@@ -26,7 +14,7 @@ function (grass.on = FALSE)
         system("g.list rast")
     }
     d.vect.area <- function(...) {
-        system("d.vect map=rivers color=blue")
+        system("d.vect map=rivieres color=blue")
         system("d.area map=lacs fillcolor=blue linecolor=blue")
     }
     startmon <- function(...) {
@@ -109,7 +97,7 @@ function (grass.on = FALSE)
         message = "R-GRASP - By A. Lehmann. Ported to R by F. Fivaz", 
         type = "ok", parent = main, title = "About...")
     main.close <- function(...) tkdestroy(main)
-    grasp.persp.plot <- function(...) vis.gam(gam.start)
+    grasp.persp.plot <- function(...) persp.gam(gam.start)
     grasp.model.summary <- function(...) {
         cat("Warning : this function only works if you already have created a model", 
             "\n")
@@ -122,9 +110,9 @@ function (grass.on = FALSE)
     grasp.scope.list <- function(...) grasp.scope(gr.selX)
     grasp.summary.gui <- function(...) lapply(gr.selY, grasp.summary)
     main <- tktoplevel()
-    tktitle(main) <- "GRASP-R - Generalized Regression Analysis and Spatial Predictions for R"
+    tktitle(main) <- "GraspeR - Generalized Regression Analysis and Spatial Predictions for R"
     main.statusbar <- tkframe(main)
-    main.statusbar.label <- tklabel(main.statusbar, text = "Welcome to GRASP-R", 
+    main.statusbar.label <- tklabel(main.statusbar, text = "Welcome to GraspeR", 
         relief = "sunken", anchor = "w")
     tkpack(main.statusbar.label, side = "left", padx = 2, expand = "yes", 
         fill = "both")
@@ -134,7 +122,13 @@ function (grass.on = FALSE)
     tkadd(main.menu, "cascade", menu = main.menu.file, label = "File", 
         underline = 0)
     tkadd(main.menu.file, "command", label = "Import...", command = grasp.import.GUI)
-    tkadd(main.menu.file, "command", label = "grasp.in...", command = grasp.in.GUI)
+    tkadd(main.menu.file, "command", label = "GraspeR in...", 
+        command = grasp.in.GUI)
+    tkadd(main.menu.file, "separator")
+    tkadd(main.menu.file, "command", label = "Export to ASCII...", 
+        command = grasp.ascii.export)
+    tkadd(main.menu.file, "command", label = "Export to points...", 
+        command = grasp.export.txt)
     tkadd(main.menu.file, "separator")
     tkadd(main.menu.file, "command", label = "Close GUI", command = main.close)
     tkadd(main.menu.file, "command", label = "Save workspace and exit", 
@@ -165,10 +159,10 @@ function (grass.on = FALSE)
     tkadd(main.menu.analysis, "command", label = "Model", command = grasp.model.go)
     tkadd(main.menu.analysis, "command", label = "Create scope list", 
         command = grasp.scope.list)
-    tkadd(main.menu.analysis, "command", label = "Stepwise selection using ANOVA (EXPERIMENTAL)", 
+    tkadd(main.menu.analysis, "command", label = "Stepwise selection using ANOVA", 
         command = grasp.step.anova)
     tkadd(main.menu.analysis, "command", label = "Predict", command = grasp.pred.gui)
-    tkadd(main.menu.analysis, "command", label = "Check GAM model", 
+    tkadd(main.menu.analysis, "command", label = "Check GAM model",
         command = grasp.model.check)
     tkadd(main.menu.analysis, "separator")
     tkadd(main.menu.analysis, "command", label = "Automated selection, model and predict...", 
@@ -189,12 +183,7 @@ function (grass.on = FALSE)
     tkadd(main.menu.plot, "command", label = "Perspective plot of model", 
         command = grasp.persp.plot)
     tkadd(main.menu.plot, "command", label = "Predictions", command = grasp.pred.plot.plot)
-    main.menu.export <- tkmenu(main, tearoff = 0)
-    tkadd(main.menu, "cascade", menu = main.menu.export, label = "Export", underline = 0)
-    tkadd(main.menu.export, "command", label = "Export to ASCII...", command = grasp.ascii.export)
-    tkadd(main.menu.export, "command", label = "Export to points...", command = grasp.export.txt)
-    tkadd(main.menu.export, "command", label = "Create lookup tables", command = grasp.lut.create)
-   if (grass.on) {
+    if (grass.on) {
         main.menu.GRASS <- tkmenu(main, tearoff = 0)
         tkadd(main.menu, "cascade", menu = main.menu.GRASS, label = "GRASS", 
             underline = 0)
@@ -207,8 +196,6 @@ function (grass.on = FALSE)
         tkadd(main.menu.GRASS, "command", label = "Convert grid to integer...")
         tkadd(main.menu.GRASS, "command", label = "Display grid...", 
             command = selectgrid.show)
-        tkadd(main.menu.GRASS, "command", label = "Display presences on the map", 
-            command = d.show.sites)
         tkadd(main.menu.GRASS, "command", label = "Display rivers and lakes", 
             command = d.vect.area)
         tkadd(main.menu.GRASS, "command", label = "Erase currently selected monitor", 
@@ -232,7 +219,7 @@ function (grass.on = FALSE)
     tkconfigure(main, menu = main.menu)
     assign("main", main, pos = 1)
     frame1 <- tkframe(main, relief = "groove", borderwidth = 2)
-    main.backgrd.label.main <- tklabel(frame1, text = "GRASP-R", 
+    main.backgrd.label.main <- tklabel(frame1, text = "GraspeR", 
         anchor = "w", font = "arial 20", justify = "left")
     main.backgrd.label.sub <- tklabel(frame1, text = "Generalized Regression Analysis and Spatial Prediction for R", 
         anchor = "w", font = "arial 14", justify = "left")

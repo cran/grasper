@@ -15,8 +15,8 @@
 }
 \Note{Look at the \code{\link{grasp.model}} code to see how sX is related to cX}
 \author{
-    Fabien Fivaz \email{fabien.fivaz@bluewin.ch}. Ported to R from GRASP \url{http://www.cscf.ch/grasp/} for S-Plus written by A. Lehmann, 
-    J.R. Leathwich and J. McC Overton. Look at \url{http://www.fivaz.ch/grasper/index.html} for details and update.
+    Fabien Fivaz \email{fabien.fivaz@bluewin.ch}. Ported to R from GRASP for S-Plus written by A. Lehmann, 
+    J.R. Leathwich and J. McC Overton. Look at \url{http://www.cscf.ch/grasp} for details and update.
 }
 \seealso{
     \code{\link{grasp.model}} and \code{\link{grasp.scope}}.

@@ -1,8 +1,8 @@
 \name{grasp.in}
 \alias{grasp.in}
-\title{Initialize GraspeR variables}
+\title{Initialize GRASP-R variables}
 \description{
-Initializes the main objects that are used throughout the GraspeR session
+Initializes the main objects that are used throughout the GRASP-R session
 }
 \usage{grasp.in(Ymat, Xmat, Xpred)}
 \arguments{
@@ -13,7 +13,7 @@ Initializes the main objects that are used throughout the GraspeR session
 \details{
     Grasp.in does several steps. It loads the required libraries (mgcv, modreg and MASS) and copies Ymat to YYY, Xmat to XXX and Xpred to XXXpred. 
     Then it creates a first model using random variables (note that it overwrites all previous models). It also creates the weights (WEIGHTS data frame). 
-    After initialisation, you can change the weights by editing the WEIGHTS variable. It also intialises a few other objects usefull to GraspeR. 
+    After initialisation, you can change the weights by editing the WEIGHTS variable. It also intialises a few other objects usefull to GRASP-R. 
     If you are not aiming at making predictions and therefore not using XXXpred, simply use grasp.in(Ymat, Xmat, Xmat). 
     The File / Import... menu from grasp.GUI automates importation of ascii files and automatically launches grasp.in after importation. 
     If you want to import files using the R prompt, look at the following functions : \code{\link{load}}, \code{\link{read.table}} and \code{\link{scan}}. 
@@ -21,7 +21,7 @@ Initializes the main objects that are used throughout the GraspeR session
 }
 \author{
     Fabien Fivaz \email{fabien.fivaz@bluewin.ch}. Ported to R from GRASP \url{http://www.cscf.ch/grasp/} for S-Plus written by A. Lehmann, 
-    J.R. Leathwich and J. McC Overton. Look at \url{http://www.fivaz.ch/grasper/index.html} for details and update.
+    J.R. Leathwich and J. McC Overton. Look at \url{http://www.cscf.ch/grasp} for details and update.
 }
 \seealso{
     \code{\link{grasp.GUI}}

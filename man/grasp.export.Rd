@@ -14,7 +14,7 @@
 \Note{If you export predictions of the same variable many times, the file is always overwritten.}
 \author{
     Fabien Fivaz \email{fabien.fivaz@bluewin.ch}. Ported to R from GRASP \url{http://www.cscf.ch/grasp/} for S-Plus written by A. Lehmann, 
-    J.R. Leathwich and J. McC Overton. Look at \url{http://www.fivaz.ch/grasper/index.html} for details and update.
+    J.R. Leathwich and J. McC Overton. Look at \url{http://www.cscf.ch/grasp} for details and update.
 }
 \seealso{
     \code{\link{grasp.pred}} and \code{\link{grasp.ascii}}
