@@ -4,6 +4,7 @@ function (...)
     options.apply <- function(...) {
         apply.ok <- TRUE
         assign("apply.ok", apply.ok, pos = 1)
+        OPT<-list()
         OPT$TITLE <- as.character(tclvalue(OPTIONS.TITLE))
         OPT$LAYOUT <- eval(parse(text = as.character(tclvalue(OPTIONS.LAYOUT))))
         OPT$NBBARS <- as.integer(tclvalue(OPTIONS.NBBARS))

@@ -13,7 +13,7 @@ function ()
     frame1 <- tkframe(about, relief = "groove", borderwidth = 2)
     frame2 <- tkframe(about, relief = "groove", borderwidth = 2)
     frame3 <- tkframe(about, relief = "groove", borderwidth = 2)
-    frame1.label1 <- tklabel(frame1, text = "GraspeR version 0.4-1", 
+    frame1.label1 <- tklabel(frame1, text = "GraspeR version 0.4-2", 
         font = "Arial 12")
     frame1.label2 <- tklabel(frame1, text = "Written by F. Fivaz (fabien.fivaz@bluewin.ch)", 
         font = "Arial 11")

@@ -9,7 +9,7 @@ function ()
         resp.sel <- tclvalue(resp.sel)
         write(resp.sel, file = "resp")
         resp.sel <- scan(file = "resp")
-        gr.selY <- resp.sel + 1
+        gr.selY <- resp.sel + 2
         assign("gr.selY", gr.selY, pos = 1)
         assign("gr.Yi", gr.selY, pos = 1)
         assign("OPT$SELY", gr.selY, pos = 1)
@@ -28,7 +28,7 @@ function ()
     tkpack(frame1, frame1.label, fill = "x")
     frame4.lstbox2 <- tklistbox(frame4, selectmode = "multiple", 
         exportselection = FALSE)
-    for (i in c(1:length(YYY))) {
+    for (i in c(2:length(YYY))) {
         tkinsert(frame4.lstbox2, "end", names(YYY)[i])
     }
     tkpack(frame4, frame4.lstbox2, fill = "x")
