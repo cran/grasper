@@ -1,6 +1,6 @@
 "grasp.model" <-
-function (gr.Yi=gr.Yi, cX = gr.selX, optest = "F", df = 4, trace = TRUE, 
-    calcdf = FALSE, stepfam = "quasibinomial()") 
+function (gr.Yi = gr.Yi, cX = gr.selX, optest = "F", df = 4, 
+    trace = TRUE, calcdf = FALSE, stepfam = "quasibinomial()") 
 {
     if (trace) {
         cat("\n")
@@ -58,8 +58,8 @@ function (gr.Yi=gr.Yi, cX = gr.selX, optest = "F", df = 4, trace = TRUE,
         }
     }
     grasp.scope(gr.selXCOR[[gr.Yi]], trace = FALSE)
-    grasp.start(cX, sX = gr.selXCOR[[gr.Yi]], 
-        df = df, trace = FALSE, calcdf = calcdf)
+    grasp.start(cX, sX = gr.selXCOR[[gr.Yi]], df = df, trace = FALSE, 
+        calcdf = calcdf)
     START <- model.formula
     assign("model.formula", model.formula, pos = 1)
     XXX <- XXX[gr.modmask[, gr.Yi], ]

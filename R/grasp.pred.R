@@ -2,12 +2,18 @@
 function (gr.Yi = gr.selY) 
 {
     cat("\n")
-    cat("*****************************************************", "\n")
-    cat("**********           GRASP PREDICT         **********", "\n")
-    cat("**********         Predicts responses      **********", "\n")
-    cat("**********        GRASP by A. Lehmann      **********", "\n")
-    cat("**********      Ported to R by F. Fivaz    **********", "\n")
-    cat("*****************************************************", "\n")
+    cat("*****************************************************", 
+        "\n")
+    cat("**********           GRASP PREDICT         **********", 
+        "\n")
+    cat("**********         Predicts responses      **********", 
+        "\n")
+    cat("**********        GRASP by A. Lehmann      **********", 
+        "\n")
+    cat("**********      Ported to R by F. Fivaz    **********", 
+        "\n")
+    cat("*****************************************************", 
+        "\n")
     cat("\n")
     cat(date(), "\n")
     cat("\n")
@@ -17,7 +23,8 @@ function (gr.Yi = gr.selY)
     cat("predicting... ")
     prediction <- rep(1, length(XXXpred[, 1]))
     prediction[gr.predmask[, gr.Yi] == FALSE] <- -99.9
-    prediction[prediction == 1] <- predict.gam(gam.start, XXXpred[prediction == 1, ], type = "response")
+    prediction[prediction == 1] <- predict.gam(gam.start, XXXpred[prediction == 
+        1, ], type = "response")
     cat("done", "\n")
     cat("Saving predictions...")
     print(prediction[1:10])

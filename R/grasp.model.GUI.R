@@ -28,7 +28,7 @@ function ()
         model.auto$predictit <- as.logical(tclvalue(MODEL.DO.PRED))
         model.auto$plotpredictit <- as.logical(tclvalue(MODEL.PLOT.PRED))
         assign("model.auto", model.auto, pos = 1)
-        grasp.model(gr.Yi,trace = model.auto$verbose, df = model.auto$df, 
+        grasp.model(gr.Yi, trace = model.auto$verbose, df = model.auto$df, 
             calcdf = model.auto$auto.df, stepfam = model.auto$family)
         grasp.scope(gr.selX, df = model.auto$df, calcdf = model.auto$auto.df)
         if (model.auto$stepit) 
@@ -39,7 +39,7 @@ function ()
             grasp.pred()
         if (model.auto$plotpredictit) 
             grasp.pred.plot(gr.predmat, resolution = model.auto$resolution)
-	assign("model.auto", model.auto, pos = 1)
+        assign("model.auto", model.auto, pos = 1)
     }
     MODEL <- tktoplevel()
     tktitle(MODEL) <- "GraspeR variable selection, model and predictions"

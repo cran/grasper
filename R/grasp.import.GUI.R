@@ -2,10 +2,15 @@
 function () 
 {
     opendlgYYY <- function(...) {
+	cat("\n********** WARNING **********")
+	cat("\nIf you get an error related to")
+	cat("\nOPT, try setting the options")
+	cat("\nfirst (Edit/Set options)")
+	cat("\n*****************************\n")
         file.select.YYY <- tclvalue(tkgetOpenFile(parent = import))
         print(file.select.YYY)
         assign("file.select.YYY", file.select.YYY, pos = 1)
-        YYY.local <- read.delim(file = file.select.YYY, sep=OPT$SEL)
+        YYY.local <- read.delim(file = file.select.YYY, sep = OPT$SEL)
         cat("Responses saved into YYY.local", "\n")
         assign("YYY.local", YYY.local, pos = 1)
         YYY.done <- TRUE
@@ -17,7 +22,7 @@ function ()
     opendlgXXX <- function(...) {
         file.select.XXX <- tclvalue(tkgetOpenFile(parent = import))
         print(file.select.XXX)
-        XXX.local <- read.delim(file = file.select.XXX, sep=OPT$SEL)
+        XXX.local <- read.delim(file = file.select.XXX, sep = OPT$SEL)
         cat("Responses saved into XXX.local", "\n")
         assign("XXX.local", XXX.local, pos = 1)
         label2.full <- paste("XXX saved from ", file.select.XXX, 
@@ -30,7 +35,7 @@ function ()
         file.select.XXXpred <- tclvalue(tkgetOpenFile(parent = import))
         print(file.select.XXXpred)
         XXXpred.local <- read.delim(file = file.select.XXXpred, 
-sep=OPT$SEL)
+            sep = OPT$SEL)
         cat("Responses saved into XXXpred.local", "\n")
         assign("XXXpred.local", XXXpred.local, pos = 1)
         label3.full <- paste("XXXpred saved from ", file.select.XXXpred, 

@@ -4,13 +4,13 @@ function (...)
     options.apply <- function(...) {
         apply.ok <- TRUE
         assign("apply.ok", apply.ok, pos = 1)
-        OPT<-list()
+        OPT <- list()
         OPT$TITLE <- as.character(tclvalue(OPTIONS.TITLE))
         OPT$LAYOUT <- eval(parse(text = as.character(tclvalue(OPTIONS.LAYOUT))))
         OPT$NBBARS <- as.integer(tclvalue(OPTIONS.NBBARS))
         OPT$WEIGHTS <- as.character(tclvalue(OPTIONS.WEIGHTS))
         OPT$RESOLUTION <- as.numeric(tclvalue(OPTIONS.RESOLUTION))
-	OPT$SEP <- as.character(tclvalue(OPTIONS.SEP))
+        OPT$SEP <- as.character(tclvalue(OPTIONS.SEP))
         print(OPT)
         assign("OPT", OPT, pos = 1)
         cat("Options set!", "\n")
@@ -51,7 +51,7 @@ function (...)
     frame2.label4 <- tklabel(frame2, text = "Weights", font = "arial 10")
     frame2.label5 <- tklabel(frame2, text = "Resolution", font = "arial 10")
     frame2.label6 <- tklabel(frame2, text = "Separator for text files", 
-font="arial 10")
+        font = "arial 10")
     frame2.entry1 <- tkentry(frame2, textvariable = OPTIONS.TITLE, 
         width = 20, justify = "left")
     frame2.entry2 <- tkentry(frame2, textvariable = OPTIONS.LAYOUT, 
@@ -62,8 +62,8 @@ font="arial 10")
         width = 20, justify = "left")
     frame2.entry5 <- tkentry(frame2, textvariable = OPTIONS.RESOLUTION, 
         width = 20, justify = "left")
-    frame2.entry6 <- tkentry(frame2, textvariable = OPTIONS.SEP, width = 
-20, justify = "left")
+    frame2.entry6 <- tkentry(frame2, textvariable = OPTIONS.SEP, 
+        width = 20, justify = "left")
     tkgrid(frame2.main, columnspan = 2, sticky = "w")
     tkgrid(frame2.label1, frame2.entry1, sticky = "w")
     tkgrid(frame2.label2, frame2.entry2, sticky = "w")

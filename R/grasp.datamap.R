@@ -2,12 +2,18 @@
 function (gr.Yi) 
 {
     cat("\n")
-    cat("*****************************************************", "\n")
-    cat("**********       GRASP-R grasp.datamap()   **********", "\n")
-    cat("********** Graph of datamap with pres/abs  **********", "\n")
-    cat("**********        GRASP by A. Lehmann      **********", "\n")
-    cat("**********      Ported to R by F. Fivaz    **********", "\n")
-    cat("*****************************************************", "\n")
+    cat("*****************************************************", 
+        "\n")
+    cat("**********       GRASP-R grasp.datamap()   **********", 
+        "\n")
+    cat("********** Graph of datamap with pres/abs  **********", 
+        "\n")
+    cat("**********        GRASP by A. Lehmann      **********", 
+        "\n")
+    cat("**********      Ported to R by F. Fivaz    **********", 
+        "\n")
+    cat("*****************************************************", 
+        "\n")
     cat("\n")
     cat(date(), "\n")
     cat("\n")
@@ -35,7 +41,7 @@ function (gr.Yi)
     legend(x = c(0, 0), y = c(XMAX, YMAX), legend = c(paste("Present: ", 
         nbp), paste("Absent: ", nba)), pch = c("+ . "), bty = "n", 
         cex = 0.6)
-    title(main = paste(OPT$TITLE," Datamap"), cex = 0.5)
+    title(main = paste(OPT$TITLE, " Datamap"), cex = 0.5)
     cat("\n")
     cat("**********        R-GRASP DATAMAP END      **********", 
         "\n")

@@ -63,6 +63,7 @@ function (gr.Yi = gr.selY, var = gr.predmat, resolution = 1000)
     cat("prediction exported to: ", "\n")
     cat(filename, "\n")
     assign("map", map, pos = 1)
+    assign("filename", filename, pos = 1)
     cat("\n")
     cat(" ********** GRASP ASCII END ********** ", "\n")
 }

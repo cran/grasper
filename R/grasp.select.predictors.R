@@ -26,16 +26,18 @@ function ()
     frame1.label <- tklabel(frame1, text = "Select predictors", 
         justify = "left", wraplength = 200)
     tkpack(frame1, frame1.label, fill = "x")
-    frame2.yscroll <- tkscrollbar(frame2, repeatinterval=5, command=function(...)tkyview(frame2.lstbox1,...))
+    frame2.yscroll <- tkscrollbar(frame2, repeatinterval = 5, 
+        command = function(...) tkyview(frame2.lstbox1, ...))
     frame2.lstbox1 <- tklistbox(frame2, selectmode = "multiple", 
-        exportselection = FALSE,yscrollcommand=function(...)tkset(frame2.yscroll,...))
+        exportselection = FALSE, yscrollcommand = function(...) tkset(frame2.yscroll, 
+            ...))
     for (i in c(4:length(XXX))) {
         tkinsert(frame2.lstbox1, "end", names(XXX)[i])
     }
     gr.selX0 <- gr.selX - 4
     for (i in gr.selX0) tkselection.set(frame2.lstbox1, i)
     tkgrid(frame2.lstbox1, frame2.yscroll)
-    tkgrid.configure(frame2.yscroll, rowspan=4, sticky="nsw")
+    tkgrid.configure(frame2.yscroll, rowspan = 4, sticky = "nsw")
     tkpack(frame2, fill = "y")
     apply.but <- tkbutton(frame3, text = "Apply", command = apply.predictors)
     close.but <- tkbutton(frame3, text = "Close", command = predsel.close)

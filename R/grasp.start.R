@@ -35,7 +35,7 @@ function (cX, sX, df = 4, calcdf = FALSE, trace = TRUE)
             vname <- names(XXX)[Xi]
             if (is.factor(XXX[[vname]])) 
                 model.formula <- c(model.formula, paste("s", 
-"(",vname,")"))
+                  "(", vname, ")"))
             else model.formula <- c(model.formula, paste("s", 
                 "(", vname, ", k=", df + 1, ", fx = TRUE)"))
         }
@@ -46,8 +46,8 @@ function (cX, sX, df = 4, calcdf = FALSE, trace = TRUE)
                 cat(names(XXX)[Xi], "\n")
             vname <- names(XXX)[Xi]
             if (is.factor(XXX[[vname]])) 
-                model.formula <- c(model.formula, 
-paste("s","(",vname,")"))
+                model.formula <- c(model.formula, paste("s", 
+                  "(", vname, ")"))
             else model.formula <- c(model.formula, paste("s", 
                 "(", vname, ")"))
         }

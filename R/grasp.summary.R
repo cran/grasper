@@ -1,5 +1,5 @@
 "grasp.summary" <-
-function (gr.Yi=gr.selY) 
+function (gr.Yi = gr.selY) 
 {
     cat("********* GraspeR.summary **********", "\n")
     cat(date(), "\n")
