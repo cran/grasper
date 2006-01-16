@@ -4,11 +4,14 @@
 \alias{grasp.roc}
 \title{GRASP-R model creator}
 \description{Creates a model from the given variables}
-\usage{grasp.model(gr.Yi, sX, family, trace, df, calcdf}
+\usage{grasp.model(gr.Yi = gr.Yi, cX = gr.selX, optest = "F", df = 4,
+                 trace = TRUE, calcdf = FALSE, stepfam =
+                 "quasibinomial()")}
 \arguments{
     \item{gr.Yi}{Selected responses to be used in the form of a vector with column numbers}
-    \item{sX}{Selected predictors to be used in the form of a vector with column numbers}
-    \item{family}{Family to be used for the model, see details}
+    \item{cX}{Selected predictors to be used in the form of a vector with column numbers}
+    \item{optest}{The type of test that will be performed}
+    \item{stepfam}{Family to be used for the model, see details}
     \item{trace}{Verbose}
     \item{df}{Degrees of freedom to be used for each variable}
     \item{calcdf}{If TRUE, the df are calculated by the gam function}

@@ -2,10 +2,10 @@
 \alias{grasp.lut}
 \title{GRASP-R lookup tables}
 \description{Create lookup tables (LUT)}
-\usage{grasp.lut(gr.Yi, grasp.model=grasp.start, path="pred1.lutSp1"}
+\usage{grasp.lut(gr.Yi, gam.model = gam.start, path = "pred1.lut")}
 \arguments{
     \item{gr.Yi}{Selected responses to be used in the form of a vector with column numbers}
-    \item{grasp.model}{Name of the model, created by grasp.model, to use}
+    \item{gam.model}{Name of the model, created by grasp.model, to use}
     \item{path}{Path for the two files that will be created}
 }
 \details{

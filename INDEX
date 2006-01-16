@@ -1,16 +1,16 @@
-grasp.GUI               GRASP-R Graphical User Interface
-grasp.RvsP              GRASP-R plot of RV vs. PV
 grasp.ascii             Export data as an ascii grid file
 grasp.corlim            GRASP-R spatial correlation plot
 grasp.cormat            GRASP-R correlations map and matrix
 grasp.datamap           GRASP-R spatial distribution plot
 grasp.export            Export data as a point file
+grasp.GUI               GRASP-R Graphical User Interface
 grasp.histo             GRASP-R Histograms of VOI on IED
 grasp.in                Initialize GRASP-R variables
 grasp.limits            GRASP-R limits
 grasp.lut               GRASP-R lookup tables
 grasp.model             GRASP-R model creator
 grasp.pred              GRASP-R Predict
+grasp.RvsP              GRASP-R plot of RV vs. PV
 grasp.scope             Scope list Creator
 grasp.start             Formula Creator
 grasp.step.gam          GRASP-R stepwise selection
